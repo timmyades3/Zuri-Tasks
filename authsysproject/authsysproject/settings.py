@@ -10,7 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+import os
 from pathlib import Path
+from telnetlib import AUTHENTICATION
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -39,6 +41,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #myapps
     'users.apps.UsersConfig',
+    'django.contrib.sites',
+    
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+    
     
 ]
 
@@ -50,6 +60,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
+
 ]
 
 ROOT_URLCONF = 'authsysproject.urls'
@@ -57,7 +69,10 @@ ROOT_URLCONF = 'authsysproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'), 
+            os.path.join(BASE_DIR, 'templates', 'allauth', 'templates')    
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -65,6 +80,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                
             ],
         },
     },
@@ -78,8 +94,12 @@ WSGI_APPLICATION = 'authsysproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'haggletest',
+        'USER' : 'postgres',
+        'PASSWORD' : 'adesina2005#',
+        'HOST' : 'localhost',
+        'PORT' : '5432',
     }
 }
 
@@ -124,3 +144,47 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#SMTP configuration
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'oluwatimileyinadesina623@gmail.com'
+EMAIL_HOST_PASSWORD = 'lgvwxgjumscopind'
+
+#social app  custom settings
+AUTHENTICATION_BACKENDS = [
+    
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+
+]
+
+SITE_ID = 2
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        # For each OAuth based provider, either add a ``SocialApp``
+        # (``socialaccount`` app) containing the required client
+        # credentials, or list them here:
+        'APP': {
+            'client_id': '663579936009-dvtau6jtqgvue54ht37jpoaljkllfpr0.apps.googleusercontent.com',
+            'secret': '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',
+            'key': ''
+        }
+    }
+}
+
+
+SOCIALACCOUNT_LOGIN_ON_GET=True
+ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = False
+LOGIN_REDIRECT_URL = 'home'
+
+#LOGIN_URL = 'login'
+#LOGIN_REDIRECT_URL = 'home'
+#LOGOUT_URL = 'logout'
+#LOGOUT_REDIRECT_URL = 'login'
+
+

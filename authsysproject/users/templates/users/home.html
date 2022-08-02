@@ -68,9 +68,10 @@
         }
             
     </style>
+    
 </head>
 
-<body>
+<body oncontextmenu="return false;" >
     <div class="header">
         <div class="header-p-1">
             <div class="logo">TEST</div>
@@ -83,7 +84,7 @@
         </div>
         <div class="header-p-2">
             <span>
-                Hello, {{request.user}}
+                Hello, {{user.username}}
             </span>
             <span>
                 <a class="logout" href="{%url 'logout'%}">logout</a>

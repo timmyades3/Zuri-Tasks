@@ -15,7 +15,10 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def landing(request):
-    return render(request, 'users/landing.html')
+    if request.user.is_authenticated:
+        return redirect('home')
+    else:    
+        return render(request, 'users/landing.html')
 
 @login_required(login_url='login')
 def home(request):
@@ -36,21 +39,25 @@ def signup(request):
         context = {'form':form}
         return render(request, 'users/signup.html', context)
 
-def loginpage(request):
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
 
-        user = authenticate(request, username=username, password=password)
-        
-        if user is not None:
-            login(request, user)
-            return redirect('home')
-        else:
-            messages.info(request, 'Username or Password is incorrect')
+def loginpage(request):
+    if request.user.is_authenticated:
+        return redirect('home')
+    else:    
+        if request.method == 'POST':
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+
+            user = authenticate(request, username=username, password=password)
             
-    context = {}
-    return render(request, 'users/login.html', context)
+            if user is not None:
+                login(request, user)
+                return redirect('home')
+            else:
+                messages.info(request, 'Username or Password is incorrect')
+            
+        context = {}
+        return render(request, 'users/login.html', context)
 
 
 def logoutuser(request):

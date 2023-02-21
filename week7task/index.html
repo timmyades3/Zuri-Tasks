@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="content">
+    <div class="images">
+      <img src="https://robbreport.com/wp-content/uploads/2022/11/2-7.jpg?w=1000" alt="">
+      <img src="https://www.motorbeam.com/wp-content/uploads/Hyperion-XP1-672x414.jpg" alt="">
+      <img
+        src="https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/body-image/public/mclaren-720s_0.jpg?itok=wZbSZ3FZ"
+        alt="">
+      <img src="https://robbreport.com/wp-content/uploads/2019/12/ssc-tuatara.jpg?w=800" alt="">
+      <img src="https://cdn.ceoworld.biz/wp-content/uploads/2020/04/SSC-Tuatara.jpg" alt="">
+    </div>
+    <div onclick="side_slide(-1)" class="slide left"> <span>&#60;</span></div>
+    <div onclick="side_slide(1)" class="slide right"> <span>&#62;</span></div>
+    <div class="btm-slider">
+      <span onclick="btm_slide(1)"></span>
+      <span onclick="btm_slide(2)"></span>
+      <span onclick="btm_slide(3)"></span>
+      <span onclick="btm_slide(4)"></span>
+      <span onclick="btm_slide(5)"></span>
+    </div>
+  </div>
+  <script src="">
+    var indexValue = 1;
+    showImg(indexValue);
+    function btm_slide(e) { showImg(indexValue = e); }
+    function side_slide(e) { showImg(indexValue += e); }
+
+    function showImg(e) {
+      var i;
+      const img = document.querySelectorAll('img');
+      const sliders = document.querySelectorAll('.btm-slider span');
+      if (e > img.length) { indexValue = 1 }
+      if (e < 1) { indexValue = img.length }
+      for (i = 0; i < img.length; i++) {
+        img[1].style.display = "none";
+      }
+      img[indexValue - 1].style.display = "block";
+
+    }
+  </script>
+
+</body>
+
+</html>

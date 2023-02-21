@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact me</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- NAV BAR -->
+  <header>
+    <div class="container navbar">
+      <div class="logo">
+        PortFolio.
+      </div>
+      <div class="nav">
+        <nav>
+      
+          <input type="checkbox" id="check">
+          <label for="check">
+            <i class="fas fa-bars" id="btn"></i>
+            <i class="fas fa-times" id="cancel"></i>
+          </label>
+      
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="project.html">Project</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div>
+        <button class="contact-me-button"><a class="contact-me-link" href="#">Contact Me</a></button>
+      </div>
+
+    </div>
+  </header>
+  <!-- SHOWCASE -->
+  <main>
+    <div class="container contact-form">
+      <div>
+        <div>
+          <h2 class="c-me">
+            Contact Me
+          </h2>
+        </div>
+        <div>
+          <form action="https://formsubmit.co/el/xijibu" target="_blank" rel="noopener noreferrer" method="POST">
+            <div class="form-info">
+              <input type="text" name="" id="user-name" placeholder="Fullname" required><br>
+              <input type="email" name="" id="user-email" placeholder="Email" required><br>
+              <select name="continent" id="country" required>
+                <option value="">Continent</option>
+                <option value="">Africa</option>
+                <option value="">North America</option>
+                <option value="">South America</option>
+                <option value="">Asia</option>
+                <option value="">Europe</option>
+                <option value="">Antarctica</option>
+                <option value="">Australia</option>
+              </select><br>
+              <textarea name="message" id="message" placeholder="Message" cols="30" rows="10"></textarea><br>
+              <button type="submit" id="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+        <div class="option">
+          <h2 class="or">OR</h2>
+          <P class="option-info">Reach out to me through social media below</P>
+          <div class="social-icons">
+            <div class="icon">
+              <a
+                  href="https://www.linkedin.com/in/oluwatimileyin-a-68042623a" target="_blank"
+                  rel="noopener noreferrer"><i class=" fab fa-linkedin fa-2x" aria-hidden="true" style="color: rgb(0, 24, 54);"
+                  ></i></a>
+            </div>
+            <div class="icon">
+              <a href="https://wa.me/qr/L6EYEOUCKDNOM1"
+                  target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp fa-2x" aria-hidden="true" style="color: rgb(0, 24, 54);"></i></a>
+            </div>
+            <div class="icon">
+              <a href="https://twitter.com/timmy_ades3?t=lEyUMb9uuGTsqoWi1gaRNw&s=09"
+                  target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter fa-2x" style="color: rgb(0, 24, 54);"></i></a>
+            </div>
+            <div class="icon">
+              <a href="#" target="_blank"
+                  rel="noopener noreferrer"><i class="fab fa-github fa-2x" aria-hidden="true" style="color: rgb(0, 24, 54);"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="container foot contact">
+      <p>&#169; 2022 timmyades3</p>
+    </div>
+  </footer>
+</body>
+
+</html>

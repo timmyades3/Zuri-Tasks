@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- NAV BAR -->
+  <header>
+    <div class="container navbar">
+      <div class="logo">
+        PortFolio.
+      </div>
+      <div class="nav">
+        <nav>
+      
+          <input type="checkbox" id="check">
+          <label for="check">
+            <i class="fas fa-bars" id="btn"></i>
+            <i class="fas fa-times" id="cancel"></i>
+          </label>
+      
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="project.html">Project</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div>
+        <button class="contact-me-button"><a class="contact-me-link" href="contactme.html">Contact Me</a></button>
+      </div>
+
+    </div>
+  </header>
+  <!-- SHOWCASE -->
+  <main>
+    <div class="container services ">
+      <div class="project-card two"><a class="projextlink" href="contactme.html" target=""
+        rel="noopener noreferrer">
+        <img class="project-img" src="https://www.kindpng.com/picc/m/557-5574265_web-design-web-development-png-transparent-png.png" alt="">
+        <figcaption>Web development</figcaption>
+
+      </a>
+    </div>
+    <div class="container services ">
+      <div class="project-card two"><a class="projextlink" href="contactme.html" target=""
+        rel="noopener noreferrer">
+        <img class="project-img" src="data:image/png;base64,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" alt="">
+        <figcaption>Resposive web development</figcaption>
+
+      </a>
+    </div>
+    
+  </main>
+  <!-- FOOTER -->
+  <footer>
+    <div class="container foot">
+      <p>&#169; 2022 timmyades3</p>
+    </div>
+  </footer>
+</body>
+
+</html>

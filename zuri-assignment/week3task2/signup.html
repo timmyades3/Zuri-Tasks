@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <section class="showcase">
+        <div class="container">
+            <div>
+                <h3 class="head">Sign up</h3>
+            </div>
+            <form  action="loginpage.html" method="post">
+                <div class="user-info">
+                    <label for="user-firstname" >First name</label>
+                    <br>
+                    <input type="text" name="" id="user-firstname" required>
+                </div>
+                <br>
+                <div class="user-info">
+                    <label for="user-lastname" >Last name</label>
+                    <br>
+                    <input type="text" name="" id="user-lastname" required>
+                </div>
+                <br>
+                <div class="user-info">
+                    <label for="user-phone" >Phone number</label>
+                    <br>
+                    <input type="tel" name="" id="user-phonenumber" required>
+                </div>
+                <br>
+                <div class="user-info">
+                    <label for="user-email" >Email</label>
+                    <br>
+                    <input type="email" name="" id="user-email" required>
+                </div>
+                <br>
+                <div class="user-info">
+                    <label for="user-gender" >Gender</label>
+                    <br>
+                    <select name="" id="user-gender" required>
+                        <option value>choose your gender</option>
+                        <option value="male">MALE</option>
+                        <option value="female">FEMALE</option>
+                        <option value="not specified">RATHER NOT SAY</option>
+                    </select>
+                </div>
+                <br>
+                <div class="user-info">
+                    <label for="user-dob">Date Of Birth</label>
+                    <br>
+                    <input type="date" name="" id="user-dob" required>
+                </div>
+                <br>
+                <div class="user-info">
+                    <label for="user-color">Favourite color</label>
+                    <br>
+                    <input type="color" name="" id="user-color" required>
+                </div>
+                <br>
+                <div class="user-info">
+                    <label for="user-password">Password</label>
+                    <br>
+                    <input type="password" name="password1" id="user-password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}" required>
+                </div>
+                <br>
+                <div class="user-info">
+                    <label for="user-password"> Confirm Password</label>
+                    <br>
+                    <input type="password" name="password2" id="user-password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}" required>
+                </div>
+                <br>
+                <div>
+                    <p class="account-sugestion">
+                        Don't have an account?
+                    </p>
+                    <a class=" signup-link" href="loginpage.html" target="_blank" rel="noopener noreferrer">Sign in</a>
+                </div>
+                <br>
+                <div>
+                    <button class="submit-button" type="submit">Sign in</button>
+                </div>
+    </section>
+</body>
+</html>
